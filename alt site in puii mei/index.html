@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>MY STORE</title>
+</head>
+<body>
+    <h1>MY STORE</h1>
+
+    <nav>
+        <ul>
+            <a href="#"><li>Home</li></a>
+            <a href="#"><li>Order</li></a>
+            <a href="#"><li>Near</li></a>
+            <a href="#"><li>About</li></a>
+        </ul>
+    </nav>
+
+    <section class="items">
+        <div class="item">
+            <img src="mancare1.jpg" height="270">
+            <h4>Chicken Wings</h4>
+            <button>Order</button>
+        </div>
+
+        <div class="item">
+            <img src="pizza.jpg" height="270">
+            <h4>Pizza </h4>
+            <button>Order</button>
+        </div>
+
+        <div class="item">
+            <img src="burger.jpg" height="270" width="400">
+            <h4>Burger</h4>
+            <button>Order</button>
+        </div>
+
+        <div class="item">
+            <img src="shaorma.jpg" height="270">
+            <h4>Shaorma</h4>
+            <button>Order</button>
+        </div>
+        
+        <div class="item">
+            <img src="shaorma-caserola.jpg" height="270" width="400">
+            <h4>Shaorma La Caserola</h4>
+            <button>Order</button>
+        </div>
+
+        
+        <div class="item">
+            <img src="cafea.jpg" height="270">
+            <h4>Cafea</h4>
+            <button>Order</button>
+        </div>
+
+        
+        <div class="item">
+            <img src="ceai cu scortisoara.jpg" height="270">
+            <h4>Ceai cu scortisoara</h4>
+            <button>Order</button>
+        </div>
+
+        <div class="item">
+            <img src="bere1.jpg" height="270" width="400">
+            <h4>Bere Ciucas</h4>
+            <button>Order</button>
+        </div>
+        
+        <div class="item">
+            <img src="bere2.jpg" height="270" width="400">
+            <h4>Bere Timisoreana</h4>
+            <button>Order</button>
+        </div>
+
+        
+        <div class="item">
+            <img src="berefa1.jpg" height="270" width="400">
+            <h4>Ursus Cooler lamaie la sticla</h4>
+            <button>Order</button>
+        </div>
+
+        
+        <div class="item">
+            <img src="berefa2.png" height="270" width="400">
+            <h4>Ursus cooler mango la doza</h4>
+            <button>Order</button>
+        </div>
+
+        <div class="item">
+            <img src="limonada-capsuni.jpg" height="290" width="400">
+            <h4>Limonada cu aroma de capsuni</h4>
+            <button>Order</button>
+        </div>
+
+
+
+    </section>
+
+</body>
+
+<style>
+
+h1{
+        text-align: center;
+        color: green;
+        font-family: 'Bebas Neue', cursive;
+        padding: 20px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+    box-sizing: border-box;
+}
+
+nav{
+    background-color: lime;
+    display: grid;
+    place-items: center;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul a{
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s ease-in;
+    font-size: 18px;
+}
+
+nav ul:hover{
+    background-color: green;
+    color: white;
+}
+
+.items{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 30px 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+
+.item img{
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.item img:hover{
+    transform: scale(1.04);
+}
+
+.item h4{
+    padding: 5px;
+    text-align: center;
+}
+
+.item button{
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+    transition: 0.2s all;
+}
+
+.item button:hover{
+    transform: scale(1.08);
+}
+
+@media screen (max-width: 1000px){
+    .items{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .items{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+    
+}
+
+</style>
+
+</html>
