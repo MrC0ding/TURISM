@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bate palma</title>
+    
+    <style>
+        .sectionLeft{
+            float: left;
+            width: 80%;
+        }
+
+        .sectionRight{
+            float: right;
+            position: absolute;
+            top: 1%;
+            right: 0%;
+            width: 20%;
+        }
+
+        .scoreContainer{
+            background-color: rgb(238, 238, 238, 0.6);
+            width: 50%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .clickerContainer img{
+            position: relative;
+            transition: all .2s ease-in-out;
+            
+        }
+
+        .clickerContainer img:hover{
+            transform: scale(1.10);
+        }
+
+        .clickerContainer img:active {
+         transform: scale(0.99);   
+        }
+
+        .shopButton{
+            background-color: #b5b5b5;
+            transition: all.2s ease-in-out;
+            border-radius: 10px;
+            width: 100%;
+            margin: 10px 0px 10px 0px;
+        }
+
+        .shopButton img{
+            height: 64px;
+            width: 64px;
+        }
+
+        .shopButton #nameAndCost p{
+            margin: 0px;
+            width: 60%;
+        }
+
+        .shopButton #nameAndCost p:first-of-type{
+            font-size: 24px;
+
+        }
+
+        .shopButton #amount{
+            font-size: 40px;
+            color: #595959;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            width: 15%;
+        }
+
+        .sectionFooter{
+            margin-top: 20%;
+        }
+
+        .unselectable{
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        p{
+            font-size: large;
+            bottom: 100%;
+            
+        }
+
+    </style>
+
+    
+
+</head>
+<body>
+<center>
+ <p>I need you to know. if you play this game for a longer time and you farm a lot of cursors high fivers or the atacul suprem. if you try the save game feature it wont work... it will reset it. i am not responsable for this. the cookie wont work!</p>
+</center>
+    <div class="sectionLeft">
+        <center>
+    <div class="scoreContainer unselectable">
+    
+    <span id="score">0</span> Palme batute<br>
+    <span id="scorepersecond">0</span> Palme batute la secunda
+    <br>
+    </div>
+    
+    <div class="clickerContainer unselectable">
+    <img src="palma_joc-removebg-preview.png" alt="" height="256px" width="256" onclick="addToScore(clickingPower)">
+    </div>
+    <button onclick="saveGame();">Save Game</button>
+    </center>
+
+    <div class="sectionFooter">
+        <h5>Bate Palma</h5>
+    </div>
+
+    </div>
+    
+    <div class="sectionRight unselectable">
+    <table class="shopButton" onclick="buyCursor()">
+        <tr>
+            <td id="image"><img src="56167-removebg-preview.png" width="100"></td>
+            <td id="nameAndCost">
+                <p>Cursor</p>
+                <p><span id="cursorcost">15</span>Palme Batute</p>
+            </td>
+            <td id="amount"><span id="cursors">0</span></td>
+
+            
+        </tr>
+    </table>
+
+    <table class="shopButton unselectable" onclick="buyGrandma()">
+        <tr>
+            <td id="image"><img src="high fiver.jpg" width="100"></td>
+            <td id="nameAndCost">
+                <p>High Fiver</p>
+                <p><span id="grandmacost">35</span>Palme Batute</p>
+            </td>
+            <td id="amount"><span id="grandmas">0</span></td>
+
+            
+        </tr>
+    </table>    
+
+    <table class="shopButton unselectable" onclick="buyOven()">
+        <tr>
+            <td id="image"><img src="serverulpacalitdevulpe.png" width="100"></td>
+            <td id="nameAndCost">
+                <p>Atacul Suprem</p>
+                <p><span id="ovencost">2.000.000</span>Palme Batute</p>
+            </td>
+            <td id="amount"><span id="ovens">0</span></td>
+
+            
+        </tr>
+    </table>    
+
+    </div>
+
+</body>
+
+    <script>
+
+document.cookie="cookiename=localhost";
+
+        var score = 0;
+        var clickingPower = 1;
+        
+        var cursorCost = 15;
+        var cursors = 0;
+        var grandmaCost = 35;
+        var grandmas = 0;
+        var ovens = 0;
+
+        function buyCursor() {
+            if (score >= cursorCost){
+            score = score - cursorCost;
+            cursors = cursors + 1;
+            cursorCost = Math.round(cursorCost * 1.15);
+            
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("cursorcost").innerHTML = cursorCost;
+            document.getElementById("cursors").innerHTML = cursors;
+            updateScorePerSecond();
+        }
+    }
+
+    function updateScorePerSecond() {
+        scorePerSecond = cursors + grandmas * 5 + ovens * 1000;
+        document.getElementById("scorepersecond").innerHTML = scorePerSecond;
+    }
+
+    function buyGrandma() {
+            if (score >= grandmaCost){
+            score = score - grandmaCost;
+            grandmas = grandmas + 1;
+            cursorCost = Math.round(grandmaCost * 1.15);
+            
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("grandmacost").innerHTML = grandmaCost;
+            document.getElementById("grandmas").innerHTML = grandmas;
+            updateScorePerSecond();
+        }
+    }
+
+    function buyOven() {
+            if (score >= ovenCost) {
+            score = score - ovenCost;
+            ovens = ovens + 1;
+            cursorCost = Math.round(ovenCost * 1.15);
+            
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("ovencost").innerHTML = ovenCost;
+            document.getElementById("ovens").innerHTML = grandmas;
+            updateScorePerSecond();
+        }
+    }
+
+
+        function addToScore(amount) {
+            score = score + amount;
+            document.getElementById("score").innerHTML = score; 
+        }
+
+        function saveGame(){
+            var gameSave = {
+                score: score,
+                clickingPower: clickingPower,
+                cursorCost: cursorCost,
+                cursors: cursors,
+                grandmaCost: grandmaCost,
+                grandmas: grandmas,
+                ovenCost: ovenCost,
+                ovens: ovens
+            };
+            localStorage.setItem("gameSave", JSON.stringify(gameSave))
+        }
+
+        setInterval(function() {
+            score = score + cursors * 1;
+            score = score + grandmas * 5;
+        document.getElementById("score").innerHTML = score;
+
+        document.title = score + " Palme batute - Bate Palma!"
+        }, 1000); // 1000ms = 1 second
+
+        setInterval (function() {
+            saveGame();
+        }, 30000); // 30000ms = 3 minutes
+
+    </script>
+</body>
+</html>
